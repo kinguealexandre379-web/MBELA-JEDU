@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mbela Jedu – Culte d’enfants</title>
+<meta name="description" content="Site du culte d’enfants de la paroisse de Mbela Jedu : photos, vidéos et informations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="conteneur" aria-label="Navigation principale">
+    <a class="marque" href="#accueil">
+      <img src="images/logo.png" alt="" onerror="this.style.visibility='hidden'">
+      Mbela Jedu
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#videos">Vidéos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="conteneur hero-grille">
+      <div>
+        <h1>Culte d’enfants<br>Mbela Jedu</h1>
+        <p>Chaque dimanche, les enfants de la paroisse chantent, prient et découvrent la Parole de Dieu ensemble.</p>
+        <div class="verset">« Laissez venir à moi les petits enfants. » – Marc 10:14</div>
+        <div class="boutons">
+          <a class="btn btn-plein" href="#photos">Voir les photos</a>
+          <a class="btn btn-vide" href="#videos">Regarder les vidéos</a>
+        </div>
+      </div>
+      <div class="hero-logo">
+        <img src="images/logo.png" alt="Logo du culte d’enfants Mbela Jedu" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'logo-secours',textContent:'Mbela Jedu'}))">
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <div class="conteneur">
+      <div class="titre">
+        <h2>Bienvenue à Mbela Jedu</h2>
+        <p>Un lieu où chaque enfant apprend à connaître Jésus, dans la joie et le respect.</p>
+      </div>
+      <div class="infos">
+        <div class="info"><h3>Quand ?</h3><p>Chaque dimanche à 07H00 pour les dimanche ordinaire et 10H00 pour les cultes de sainte cène.</p></div>
+        <div class="info"><h3>Où ?</h3><p>E.E.C Mbela Jedu, en face de Elu Hôtel, Douala.</p></div>
+        <div class="info"><h3>Pour qui ?</h3><p>Tous les enfants, accompagnés de leurs moniteurs. Les parents sont les bienvenus.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos">
+    <div class="conteneur">
+      <div class="titre"><h2>Nos photos</h2><p>Les beaux moments de nos cultes, club adolescents et fêtes.</p></div>
+      <div class="filtres" id="filtres"></div>
+      <div class="galerie" id="galerie"></div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <div class="conteneur">
+      <div class="titre"><h2>Nos vidéos</h2><p>Chants, témoignages et souvenirs du culte d’enfants.</p></div>
+      <div class="videos" id="listeVideos"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="conteneur">
+      <div class="titre"><h2>Nous contacter</h2></div>
+      <div class="contact-grille">
+        <div class="carte">
+          <h3>Paroisse de Mbela Jedu</h3>
+          <p>Église Évangélique du Cameroun<br>District de Douala Nord</p>
+          <p style="margin-top:12px"><strong>Téléphone / WhatsApp :</strong> +237 655308645</p>
+          <p><strong>E-mail :</strong>cultedenfantsmbelajedu@gmail.com</p>
+        </div>
+        <form class="carte" id="formulaire">
+          <div><label for="nom">Votre nom</label><input id="nom" required></div>
+          <div><label for="msg">Votre message</label><textarea id="msg" rows="4" required></textarea></div>
+          <button class="btn btn-plein" type="submit">Envoyer sur WhatsApp</button>
+          <p class="message-ok" id="ok" role="status">Merci ! WhatsApp va s’ouvrir.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© <span id="annee"></span> Culte d’enfants – Paroisse de Mbela Jedu, E.E.C</p>
+</footer>
+
+<div class="boite" id="boite" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="b-fermer" id="bFermer" aria-label="Fermer">×</button>
+  <button class="b-prec" id="bPrec" aria-label="Photo précédente">‹</button>
+  <button class="b-suiv" id="bSuiv" aria-label="Photo suivante">›</button>
+  <img id="bImg" alt="">
+  <p id="bLegende"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

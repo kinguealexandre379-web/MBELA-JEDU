@@ -1,0 +1,112 @@
+:root{
+  --nuit:#0f2f66;      /* bleu foncé du logo */
+  --bleu:#1a56b0;      /* bleu du cercle */
+  --ciel:#dcebfb;      /* fond clair */
+  --ciel-2:#bcd6f6;
+  --creme:#fffaf0;
+  --soleil:#f5b83d;    /* accent chaleureux */
+  --texte:#17284a;
+  --rayon:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{font-family:"Nunito",system-ui,sans-serif;color:var(--texte);background:var(--ciel);line-height:1.65;font-size:1.05rem}
+h1,h2,h3{font-family:"Fredoka","Trebuchet MS",sans-serif;color:var(--nuit);line-height:1.15}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--soleil);outline-offset:3px}
+.conteneur{width:min(1100px,92%);margin-inline:auto}
+section{padding:72px 0}
+
+/* Navigation */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:3px solid var(--bleu)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.marque{display:flex;align-items:center;gap:10px;font-family:"Fredoka",sans-serif;font-weight:700;color:var(--nuit);text-decoration:none;font-size:1.2rem}
+.marque img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--ciel)}
+.menu{display:flex;gap:6px;list-style:none}
+.menu a{display:block;padding:8px 14px;border-radius:999px;text-decoration:none;font-weight:700;color:var(--nuit)}
+.menu a:hover{background:var(--ciel)}
+.burger{display:none;background:none;border:2px solid var(--bleu);color:var(--bleu);border-radius:10px;padding:6px 12px;font:700 1rem "Fredoka",sans-serif;cursor:pointer}
+
+/* Accueil */
+.hero{padding:60px 0 90px;background:
+    radial-gradient(circle at 85% 20%,var(--ciel-2) 0 140px,transparent 141px),
+    var(--ciel);}
+.hero-grille{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);letter-spacing:-.5px}
+.hero p{max-width:34em;margin:18px 0 28px;font-size:1.15rem}
+.verset{display:inline-block;background:var(--creme);border-left:6px solid var(--soleil);padding:10px 16px;border-radius:0 14px 14px 0;font-weight:600;margin-bottom:26px}
+.boutons{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font:600 1.05rem "Fredoka",sans-serif;text-decoration:none;border:3px solid var(--bleu);cursor:pointer}
+.btn-plein{background:var(--bleu);color:#fff}
+.btn-plein:hover{background:var(--nuit);border-color:var(--nuit)}
+.btn-vide{background:transparent;color:var(--bleu)}
+.btn-vide:hover{background:#fff}
+.hero-logo{display:grid;place-items:center}
+.hero-logo img{width:min(380px,80%);border-radius:50%;box-shadow:0 14px 0 var(--ciel-2);background:#fff}
+.logo-secours{width:min(340px,80%);aspect-ratio:1;border-radius:50%;background:#fff;border:8px solid var(--bleu);display:grid;place-items:center;text-align:center;font:700 2.2rem "Fredoka",sans-serif;color:var(--nuit)}
+
+/* Titres de section */
+.titre{text-align:center;margin-bottom:38px}
+.titre h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+.titre p{max-width:34em;margin:10px auto 0}
+
+/* À propos */
+#apropos{background:var(--creme)}
+.infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.info{background:#fff;border:3px solid var(--ciel-2);border-radius:var(--rayon);padding:26px}
+.info:nth-child(2){border-color:var(--soleil)}
+.info h3{font-size:1.35rem;margin-bottom:6px}
+
+/* Galerie */
+.filtres{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:30px}
+.filtre{padding:9px 20px;border-radius:999px;border:3px solid var(--bleu);background:transparent;color:var(--bleu);font:600 1rem "Fredoka",sans-serif;cursor:pointer}
+.filtre[aria-pressed="true"]{background:var(--bleu);color:#fff}
+.galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.photo{position:relative;border:0;padding:0;border-radius:var(--rayon);overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;background:var(--ciel-2)}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.photo:hover img{transform:scale(1.06)}
+.photo span{position:absolute;inset:auto 0 0 0;padding:26px 12px 10px;color:#fff;font-weight:700;text-align:left;background:linear-gradient(transparent,rgba(15,47,102,.85))}
+.vide-photo{display:grid;place-items:center;height:100%;font:600 1rem "Fredoka",sans-serif;color:var(--bleu);padding:10px;text-align:center}
+
+/* Vidéos */
+#videos{background:var(--nuit)}
+#videos h2,#videos .titre p{color:#fff}
+.videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.video{background:#fff;border-radius:var(--rayon);overflow:hidden}
+.lecteur{position:relative;aspect-ratio:16/9;background:var(--ciel-2)}
+.lecteur video,.lecteur iframe{width:100%;height:100%;border:0;background:#000}
+.lecture{position:absolute;inset:0;width:100%;border:0;background:var(--ciel-2) center/cover;cursor:pointer;display:grid;place-items:center}
+.lecture i{width:68px;height:68px;border-radius:50%;background:var(--soleil);display:grid;place-items:center;box-shadow:0 5px 0 rgba(0,0,0,.2)}
+.lecture i::after{content:"";border-left:22px solid var(--nuit);border-block:13px solid transparent;margin-left:6px}
+.video h3{font-size:1.15rem;padding:14px 18px 16px}
+
+/* Contact */
+#contact{background:var(--creme)}
+.contact-grille{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.carte{background:#fff;border-radius:var(--rayon);padding:28px;border:3px solid var(--ciel-2)}
+form{display:grid;gap:14px}
+label{font-weight:700}
+input,textarea{width:100%;padding:12px 14px;border:2px solid var(--ciel-2);border-radius:14px;font:inherit;color:inherit;background:#fff}
+input:focus,textarea:focus{border-color:var(--bleu);outline:none}
+.message-ok{display:none;background:#e3f6e8;border-radius:12px;padding:12px 14px;font-weight:700}
+
+footer{background:var(--nuit);color:#fff;text-align:center;padding:26px 0}
+
+/* Visionneuse photo */
+.boite{position:fixed;inset:0;z-index:50;background:rgba(10,25,60,.92);display:none;align-items:center;justify-content:center;padding:20px;flex-direction:column;gap:12px}
+.boite.ouverte{display:flex}
+.boite img{max-height:78vh;border-radius:14px}
+.boite p{color:#fff;font-weight:700}
+.boite button{position:absolute;border:0;border-radius:50%;width:48px;height:48px;font-size:1.6rem;cursor:pointer;background:#fff;color:var(--nuit)}
+.b-fermer{top:16px;right:16px}.b-prec{left:14px;top:50%}.b-suiv{right:14px;top:50%}
+
+@media (max-width:800px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;padding:12px 4%;border-bottom:3px solid var(--bleu)}
+  .menu.ouvert{display:flex}
+  .hero-grille,.contact-grille{grid-template-columns:1fr}
+  .hero-logo{order:-1}
+  section{padding:54px 0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
